@@ -19,7 +19,7 @@ const transactionRoutes = require('./routes/transaction.routes');
 /* 
  * USE ROUTES 
  */
-app.use('/', () => {
+app.use('/', (req, res) => {
     res.send('Backend-Ledger is up now');
 })
 
