@@ -9,8 +9,9 @@ const startServer = async () => {
         await connectDB();
         console.log('Database connected');
 
-        app.listen(process.env.PORT_NO, () => {
-            console.log('Server is running at localhost');
+        const PORT = process.env.PORT || process.env.PORT_NO || 3000;
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
         })
 
     } catch (err) {
