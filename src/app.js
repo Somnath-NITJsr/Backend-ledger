@@ -19,12 +19,12 @@ const transactionRoutes = require('./routes/transaction.routes');
 /* 
  * USE ROUTES 
  */
-app.use('/', (req, res) => {
-    res.send('Backend-Ledger is up now');
-})
 
 app.use('/api/auth', authRouter);
 app.use('/api/account', accountRouter);
 app.use('/api/transaction', transactionRoutes);
 
+app.use('/', (req, res) => {
+    res.send('Backend-Ledger is up now');
+})
 module.exports = app;
