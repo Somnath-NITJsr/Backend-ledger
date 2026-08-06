@@ -34,7 +34,7 @@ const userRegisterController = async (req, res) => {
 
         res.cookie('token', token);
 
-        await emailService.sendRegistrationEmail(user.email, user.name);
+        emailService.sendRegistrationEmail(user.email, user.name).catch(console.error);
 
         return res.status(201).json({
             message: 'Account created successfully',

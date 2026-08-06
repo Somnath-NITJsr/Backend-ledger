@@ -159,7 +159,7 @@ const createTransactionController = async (req, res) => {
     /**
      * 10. Send email notification
      */
-    await emailService.sendTransactionEmail(req.user.email, req.user.name, amount, toAccount)
+    emailService.sendTransactionEmail(req.user.email, req.user.name, amount, toAccount).catch(console.error)
 
     return res.status(201).json({
         message: "Transaction completed successfully",
